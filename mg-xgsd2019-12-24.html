@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <style>
+    /*新歌速递整体框架*/
+    #xingesudikuang{
+      width:1230px;height:646px;
+      border:1px solid #000;
+      margin-left:-50px;
+    }
+    /*新歌速递头部方框*/
+    #xingesuditoubu{
+      width: 1200px;height: 34px;
+      border:1px solid #000;
+    }
+    /*新歌速递ul  li  调整*/
+    #xgsd .breadcrumb-item+.breadcrumb-item::before{
+      content:"|";
+    }
+    #xgsd {
+      margin-left:200px;
+      margin-top:-55px;
+      color:#666;
+    }
+    /*新歌速递头部字体*/
+    .xingesuditoubuzi1{
+      color:#e91e63;
+    }
+    .xingesuditoubuzi2{
+      color: #666;
+    }
+    /*新歌速递播放全部方框大小*/
+    #xingesudibofangquanbu{
+      width:112px;height: 34px;
+      font-size:14px;border:1px solid #fff;
+      text-align:center;line-height: 34px;
+      margin-left:1087px;margin-top:-57px;
+      border-radius: 32px;
+    }
+    /*轮播图上边距*/
+    #yyb{
+      margin-top:50px;
+    }
+    /*新歌速递轮播图背景大小*/
+    #xin-ge-su-di-lun-bo-tu-bei-jing{
+      width:1220px;
+      height: 340px;
+      border:1px solid #000;
+      margin-top:50px;
+
+    }
+    /*新歌速递里边标签大小*/
+    .jumbotron{
+      width:387px ;
+      height: 100px;
+      margin-bottom: 1rem;
+      margin-right:1.2rem;
+      float: left;
+    }
+    /*标签里面字体*/
+    .media-body{
+      color:#333;
+      font-size:16px;
+      margin-top:25px;
+      margin-left:10px;
+    }
+    /*新歌速递时间*/
+    .xgsdsj{
+      margin-top:35px;
+      margin-right:20px;
+    }
+
+    /*左右箭头*/
+    .carousel-control-prev,
+    .carousel-control-next{
+       width:5%;height:25%;
+       background-color: #000;
+       border-radius: 2.25rem;
+       top:35%;
+     }
+    .carousel-control-prev{
+      left:-6rem;
+    }
+    .carousel-control-next{
+      right: -5rem;
+    }
+/*轮播指示器*/
+    .carousel-indicators li{
+      width:1rem;
+      height: 1rem;
+      border-radius: 50%;
+      background:#868686;
+      margin-left:1rem;
+      margin-right:1rem;
+      bottom:-80px;
+    }
+    .carousel-indicators li.active{
+      background: #fff;
+    }
+    /*左右标记悬停效果*/
+    .carousel-control-prev:hover{
+      transform:scale(1.2);
+    }
+    .carousel-control-next:hover{
+      transform:scale(1.2);
+    }
+    .carousel-control-next:hover{
+      transition: transform 1s;
+    }
+    .carousel-control-prev:hover{
+      transition: transform 1s;
+    }
+
+    /*图片悬停效果*/
+    .mr-3:hover{
+      transform:scale(1.1);
+    }
+    .mr-3:hover{
+      transition: transform 1s;
+    }
+    /*轮播图图片边距*/
+    .carousel-item .border{
+      border: none !important;
+    }
+  </style>
+</head>
+<body style="background:url(bg.png)" >
+<div class="container">
+  <!-- 新歌速递页面-->
+  <!--<img src="bg.png" alt=""/>-->
+  <div id="xingesudikuang">
+  <!-- 新歌速递头部-->
+    <div id="xingesuditoubu">
+      <h2 style="color:#fff;">新歌速递</h2>
+      <ul id="xgsd" class="breadcrumb bg-transparent">
+        <li class="breadcrumb-item"><a class="xingesuditoubuzi1" href="">华语</a></li>
+        <li class="breadcrumb-item"><a class="xingesuditoubuzi2" href="">欧美</a></li>
+        <li class="breadcrumb-item"><a class="xingesuditoubuzi2" href="">日韩</a></li>
+      </ul>
+      <div id="xingesudibofangquanbu"><a style="color:#fff;" href="">播放全部</a></div>
+    </div>
+    <!-- 轮播图-->
+    <div id="yyb" class="carousel" data-ride="carousel" >
+
+      <div class="carousel-inner">
+      <!-- 第一页-->
+      <div class="carousel-item active ">
+        <!-- 标签1-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/01.jpg" alt=""/>
+          <div class="media-body">
+            <h6>合拍(Sunlight)</h6>
+            <p>郭书瑶</p>
+          </div>
+          <p class="xgsdsj">03:12</p>
+        </div>
+        <!-- 标签2-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/02.jpg" alt=""/>
+          <div class="media-body">
+            <h6>默念你</h6>
+            <p>宋念宇</p>
+          </div>
+          <p class="xgsdsj">04:40</p>
+        </div>
+        <!-- 标签3-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/03.jpg" alt=""/>
+          <div class="media-body">
+            <h6>圣诞节的歌</h6>
+            <p>跟风超人 / 王德发</p>
+          </div>
+          <p class="xgsdsj">03:55</p>
+        </div>
+        <!-- 标签4-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/04.jpg" alt=""/>
+          <div class="media-body">
+            <h6>老友记</h6>
+            <p>李荣浩</p>
+          </div>
+          <p class="xgsdsj">04:46</p>
+        </div>
+        <!-- 标签5-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/05.jpg" alt=""/>
+          <div class="media-body">
+            <h6>宠爱(电影《宠爱》</h6>
+            <p>陈伟霆 / 吴磊 / 杨子姗</p>
+          </div>
+          <p class="xgsdsj">03:49</p>
+        </div>
+        <!-- 标签6-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/06.jpg" alt=""/>
+          <div class="media-body">
+            <h6>逍遥辞</h6>
+            <p>徐良</p>
+          </div>
+          <p class="xgsdsj">03:42</p>
+        </div>
+        <!-- 标签7-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/07.jpg" alt=""/>
+          <div class="media-body">
+            <h6>就听</h6>
+            <p>董又霖</p>
+          </div>
+          <p class="xgsdsj">03:37</p>
+        </div>
+        <!-- 标签8-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/08.jpg" alt=""/>
+          <div class="media-body">
+            <h6>董又霖</h6>
+            <p>戴景耀</p>
+          </div>
+          <p class="xgsdsj">03:36</p>
+        </div>
+        <!-- 标签9-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/09.jpg" alt=""/>
+          <div class="media-body">
+            <h6>天亮就走</h6>
+            <p>张赫宣</p>
+          </div>
+          <p class="xgsdsj">04:45</p>
+        </div>
+      </div>
+      <!-- 第二页-->
+      <div class="carousel-item ">
+        <!-- 标签1-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/10.jpg" alt=""/>
+          <div class="media-body">
+            <h6>像我们都是少年(动画《万国志》插曲)</h6>
+            <p>周品</p>
+          </div>
+          <p class="xgsdsj">04:31</p>
+        </div>
+        <!-- 标签2-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/11.jpg" alt=""/>
+          <div class="media-body">
+            <h6>暖暖的家</h6>
+            <p>歌浴森</p>
+          </div>
+          <p class="xgsdsj">05:40</p>
+        </div>
+        <!-- 标签3-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/12.jpg" alt=""/>
+          <div class="media-body">
+            <h6>配合</h6>
+            <p>薛之谦</p>
+          </div>
+          <p class="xgsdsj">03:14</p>
+        </div>
+        <!-- 标签4-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/13.jpg" alt=""/>
+          <div class="media-body">
+            <h6>梦中的图瓦卢</h6>
+            <p>阿兰</p>
+          </div>
+          <p class="xgsdsj">04:35</p>
+        </div>
+        <!-- 标签5-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/14.jpg" alt=""/>
+          <div class="media-body">
+            <h6>可是我爱你</h6>
+            <p>刘宪华</p>
+          </div>
+          <p class="xgsdsj">03:10</p>
+        </div>
+        <!-- 标签6-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/15.jpg" alt=""/>
+          <div class="media-body">
+            <h6>不忘</h6>
+            <p>范玮琪</p>
+          </div>
+          <p class="xgsdsj">03:42</p>
+        </div>
+        <!-- 标签7-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/16.jpg" alt=""/>
+          <div class="media-body">
+            <h6>梦她 (网剧《梦回》插曲)</h6>
+            <p>李鑫一</p>
+          </div>
+          <p class="xgsdsj">04:37</p>
+        </div>
+        <!-- 标签8-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/17.jpg" alt=""/>
+          <div class="media-body">
+            <h6>下凡</h6>
+            <p>凤凰传奇</p>
+          </div>
+          <p class="xgsdsj">04:46</p>
+        </div>
+        <!-- 标签9-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/18.jpg" alt=""/>
+          <div class="media-body">
+            <h6>穿花扑蝶曲</h6>
+            <p>双笙</p>
+          </div>
+          <p class="xgsdsj">06:45</p>
+        </div>
+      </div>
+      <!-- 第三页-->
+        <div class="carousel-item ">
+        <!-- 标签1-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/19.jpg" alt=""/>
+          <div class="media-body">
+            <h6>迷雾</h6>
+            <p>不才</p>
+          </div>
+          <p class="xgsdsj">04:12</p>
+        </div>
+        <!-- 标签2-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/20.jpg" alt=""/>
+          <div class="media-body">
+            <h6>我可以(电视剧《楼下女友请签收》插曲)</h6>
+            <p>王瑞淇</p>
+          </div>
+          <p class="xgsdsj">04:40</p>
+        </div>
+        <!-- 标签3-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/21.jpg" alt=""/>
+          <div class="media-body">
+            <h6>歌声与微笑</h6>
+            <p> AKB48 Team SH</p>
+          </div>
+          <p class="xgsdsj">03:55</p>
+        </div>
+        <!-- 标签4-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/22.jpg" alt=""/>
+          <div class="media-body">
+            <h6>归来</h6>
+            <p>平安</p>
+          </div>
+          <p class="xgsdsj">04:46</p>
+        </div>
+        <!-- 标签5-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/23.jpg" alt=""/>
+          <div class="media-body">
+            <h6>宠爱(电影《宠爱》</h6>
+            <p>陈伟霆 / 吴磊 / 杨子姗</p>
+          </div>
+          <p class="xgsdsj">03:49</p>
+        </div>
+        <!-- 标签6-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/24.jpg" alt=""/>
+          <div class="media-body">
+            <h6>昔日圣诞</h6>
+            <p>曾轶可</p>
+          </div>
+          <p class="xgsdsj">03:42</p>
+        </div>
+        <!-- 标签7-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/25.jpg" alt=""/>
+          <div class="media-body">
+            <h6>就听</h6>
+            <p>董又霖</p>
+          </div>
+          <p class="xgsdsj">03:37</p>
+        </div>
+        <!-- 标签8-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/26.jpg" alt=""/>
+          <div class="media-body">
+            <h6>董又霖</h6>
+            <p>戴景耀</p>
+          </div>
+          <p class="xgsdsj">03:36</p>
+        </div>
+        <!-- 标签9-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/27.jpg" alt=""/>
+          <div class="media-body">
+            <h6>天亮就走</h6>
+            <p>张赫宣</p>
+          </div>
+          <p class="xgsdsj">04:45</p>
+        </div>
+      </div>
+      </div>
+      <!-- 左右箭头-->
+      <a data-slide="next" class="carousel-control-next" href="#yyb">
+        <span class="carousel-control-next-icon"></span>
+      </a>
+      <a data-slide="prev" class="carousel-control-prev" href="#yyb">
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <!-- 轮播指示器-->
+      <ul class="carousel-indicators">
+        <li data-target="#yyb" data-slide-to="0" class="active"></li>
+        <li data-target="#yyb" data-slide-to="1"></li>
+        <li data-target="#yyb" data-slide-to="2"></li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+</html>

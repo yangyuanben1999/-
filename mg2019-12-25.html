@@ -1,0 +1,1104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <style>
+    /*热点整体背景*/
+    #redianbeijing{
+      width: 1600px;
+      height: 800px;
+      background-color: #fff;
+      margin-left:-200px;
+    }
+    /*热点头部*/
+    #rediantoubu{
+      width:1300px;
+      height: 40px;
+      /*border: 1px solid #000;*/
+      margin-bottom:15px;
+      margin-left:150px;
+    }
+    /*h2为块级元素*/
+    h2{
+      display: block;
+
+    }
+    /*推荐歌单*/
+    h2.tjgd{
+      margin-top:70px;
+    }
+    /*热点头部字*/
+    #rediantoubuzi{
+      font-size: 16px;
+      list-style:none;
+      margin-left: 200px;
+      margin-top: -40px;
+    }
+    /*热点更多*/
+    #rediangengduo{
+      font-size: 16px;
+      margin-left: 1200px;
+      margin-top: -20px;
+    }
+    /*热点div框*/
+    #redian{
+      width:1450px;
+      height:590px;
+      /*border: 1px solid #000;*/
+      margin-left:150px;
+      margin-top:100px;
+    }
+    /*热点10方块框*/
+    #rd1,#rd2,#rd3,#rd4,#rd5,#rd6,#rd7,#rd8,#rd9,#rd10{
+      /*border:1px solid #000;*/
+      width:250px;
+      height:284px;
+      float:left;margin-top:10px;
+    }
+    /*左边距*/
+    #rd2,#rd3,#rd4,#rd5,#rd7,#rd8,#rd9,#rd10{
+      margin-left:8px;
+    }
+    /*热点字调整*/
+    #rdz1,#rdz2,#rdz3,#rdz4,#rdz5,#rdz6,#rdz7,#rdz8,#rdz9,#rdz10{
+      font-size:16px;color:#333;
+      margin-top:5px;margin-bottom: 10px;
+      float:left;
+      text-decoration:none;
+    }
+    /*热点图片大小*/
+    #rediantupian img{
+      width:216px;
+      height:216px;
+    }
+    /*耳机div*/
+    .erjikuang{
+      width:216px;height:20px;
+      float:left;
+    }
+    /*小耳机图片*/
+    #rediantupian .erji{
+      width:12px;height:13px;
+      float:left;
+      background:#999;
+    }
+    /*热点播放量-字体*/
+    .redianbofangliang{
+      float:left;font-size:14px;
+      color:#999;
+      margin-left:5px;
+      margin-top:-4px;
+    }
+    /*热点图片悬停*/
+    .rdtp:hover{
+      transform:scale(1.1);
+    }
+    .rdtp:hover {
+      transition: transform 1s;
+    }
+    /*新歌速递整体框架*/
+    #xingesudikuang{
+      width:1230px;height:646px;
+      /*border:1px solid #000;*/
+      margin-left:-50px;
+      margin-top:100px;
+
+    }
+    /*新歌速递头部方框*/
+    #xingesuditoubu{
+      width: 1200px;height: 34px;
+      margin-bottom:30px;
+      /*border:1px solid #000;*/
+    }
+    /*新歌速递ul  li  调整*/
+    #xgsd .breadcrumb-item+.breadcrumb-item::before{
+      content:"|";
+    }
+    #xgsd {
+      margin-left:200px;
+      margin-top:-55px;
+      color:#666;
+    }
+    /*新歌速递头部字体*/
+    .xingesuditoubuzi1{
+      color:#e91e63;
+    }
+    .xingesuditoubuzi2{
+      color: #666;
+    }
+    /*新歌速递播放全部方框大小*/
+    #xingesudibofangquanbu{
+      width:112px;height: 34px;
+      font-size:14px;border:1px solid #fff;
+      text-align:center;line-height: 34px;
+      margin-left:1087px;margin-top:-57px;
+      border-radius: 32px;
+    }
+    /*轮播图上边距*/
+    #xgsdlbt{
+      margin-top:50px;
+    }
+    /*新歌速递里边标签大小*/
+    .jumbotron{
+      width:387px ;
+      height: 100px;
+      margin-bottom: 1rem;
+      margin-right:1.2rem;
+      float: left;
+    }
+    /*标签里面字体*/
+    .media-body{
+      color:#333;
+      font-size:16px;
+      margin-top:25px;
+      margin-left:10px;
+    }
+    /*新歌速递时间*/
+    .xgsdsj{
+      margin-top:35px;
+      margin-right:20px;
+    }
+    /*左右箭头*/
+    .carousel-control-prev,
+    .carousel-control-next{
+       width:5%;height:25%;
+       background-color: #000;
+       border-radius: 2.25rem;
+       top:35%;
+     }
+    .carousel-control-prev{
+      left:-6rem;
+    }
+    .carousel-control-next{
+      right: -5rem;
+    }
+/*轮播指示器*/
+    .carousel-indicators li{
+      width:1rem;
+      height: 1rem;
+      border-radius: 50%;
+      background:#868686;
+      margin-left:1rem;
+      margin-right:1rem;
+      bottom:-80px;
+    }
+    .carousel-indicators li.active{
+      background: #fff;
+    }
+    /*左右标记悬停效果*/
+    .carousel-control-prev:hover{
+      transform:scale(1.2);
+    }
+    .carousel-control-next:hover{
+      transform:scale(1.2);
+    }
+    .carousel-control-next:hover{
+      transition: transform 1s;
+    }
+    .carousel-control-prev:hover{
+      transition: transform 1s;
+    }
+    /*图片悬停效果*/
+    .mr-3:hover{
+      transform:scale(1.1);
+    }
+    .mr-3:hover{
+      transition: transform 1s;
+    }
+    /*轮播图图片边距*/
+    .carousel-item .border{
+      border: none !important;
+    }
+    /* 排行榜框*/
+    .paihangbangkuang{
+      width: 1250px;height: 700px;
+      /*border:1px solid #fff;*/
+      margin-left:-50px;
+      margin-top:-120px;
+    }
+    /*排行榜头部*/
+    .paihangbangtoubu{
+      width: 1250px;
+      height: 32px;
+      /*border:1px solid #fff;*/
+      margin-bottom: 40px;
+    }
+    /*音乐榜*/
+    .yinyuebang{
+      width: 387px;
+      height: 529px;
+      /*border:1px solid #fff;*/
+      float: left;
+      margin-right:20px;
+      background-image: url(phb/bg-01.png);
+    }
+    /*欧美榜*/
+    .oumeibang{
+      width: 387px;
+      height: 529px;
+      /*border:1px solid #fff;*/
+      float: left;
+      margin-right:20px;
+      background-image: url(phb/bg-02.png);
+    }
+    /*影视榜*/
+    .yingshibang{
+      width: 387px;
+      height: 529px;
+      /*border:1px solid #fff;*/
+      float: left;
+      margin-right:20px;
+      background-image: url(phb/bg-03.png);
+    }
+    /*音乐榜悬停效果*/
+    .yinyuebang:hover{
+      transform:scale(1.05);
+    }
+    .yinyuebang:hover{
+      transition: transform 1s;
+    }
+    /*欧美榜悬停效果*/
+    .oumeibang:hover{
+      transform:scale(1.05);
+    }
+    .oumeibang:hover{
+      transition: transform 1s;
+    }
+    /*影视榜悬停效果*/
+    .yingshibang:hover{
+      transform:scale(1.05);
+    }
+    .yingshibang:hover{
+      transition: transform 1s;
+    }
+    /*音乐榜头*/
+    .phbt{
+      width: 290px;
+      height: 75px;
+      padding: 20px 20px;
+      float:left;
+    }
+    /*排行榜播放器*/
+    .phbbfq{
+      width: 34px;
+      height: 34px;
+      margin-top:30px;
+      margin-bottom:20px;
+      margin-left:40px;
+    }
+    /*空模块*/
+    .kong{
+      width: 387px;
+      height: 30px;
+    rgba(0,0,0,0.25);
+    }
+    /*排行块*/
+    .paihangkuai{
+      width: 387px;
+      height: 75px;
+      float:left;
+    }
+    /*排名数字*/
+    .paihang1{
+      font-size:18px;
+      color:#fff;
+      margin-left:20px;
+      margin-right:20px;
+      margin-top:25px;
+      float:left;
+    }
+    /*排行歌手图片*/
+    .pht{
+      width: 55px;
+      height: 55px;
+      margin-top:10px;
+      float:left;
+    }
+    /*排行歌名*/
+    .phgm{
+      font-size:16px;
+      color:#fff;
+      margin-left:25px;
+      float:left;
+      margin-top:10px;
+    }
+    /*排行歌手1*/
+    .phgs1,.phgs2,.phgs3,.phgs4,.phgs5{
+      font-size:14px;
+      color:rgba(225,225,225,.6);
+    }
+    /*排行歌手1*/
+    .phgs1{
+      margin-top:40px;
+      margin-left:-48px;
+      float:left;
+    }
+    /*排行歌手2*/
+    .phgs2{
+      margin-top:45px;
+      margin-left:-65px;
+      float:left;
+    }
+    /*排行歌手3*/
+    .phgs3{
+      margin-top:45px;
+      margin-left:-130px;
+      float:left;
+    }
+    /*排行歌手4*/
+    .phgs4{
+      margin-top:45px;
+      margin-left:-35px;
+      float:left;
+    }
+    /*排行歌手5*/
+    .phgs5{
+      margin-top:45px;
+      margin-left:-45px;
+      float:left;
+    }
+    /*播放量耳机大小*/
+    .phbej1,.phbej2,.phbej3,.phbej4,.phbej5{
+      width: 14px;
+      height: 14px;
+    }
+    /*播放耳机1*/
+    .phbej1{
+      margin-left:150px;
+      margin-top:35px;
+    }
+    /*播放耳机2*/
+    .phbej2{
+      margin-left:133px;
+      margin-top:35px;
+    }
+    /*播放耳机3*/
+    .phbej3{
+      margin-left:69px;
+      margin-top:35px;
+    }
+    /*播放耳机4*/
+    .phbej4{
+      margin-left:158px;
+      margin-top:35px;
+    }
+    /*播放耳机5*/
+    .phbej5{
+      margin-left:144px;
+      margin-top:35px;
+    }
+    /*排行榜播放量*/
+    .phbbfl{
+      color:#fff;
+      font-size:14px;
+      margin-left:350px;
+      margin-top:-21px;
+    }
+    /*排行歌手图片悬停效果*/
+    .pht:hover{
+      transform:scale(1.2);
+    }
+    .pht:hover{
+      transition: transform 1s;
+    }
+    /*排行榜字*/
+    .paihangbangtoubu .paihangbangzi{
+      width: 96px; height: 35px;
+      color:#fff;float:left;
+      margin-top:-5px;
+      font-size:32px;
+      font-weight: 800;
+    }
+    /*排行榜更多*/
+    .phbgd{
+      font-size:16px;
+      float:right;
+      margin-right:45px ;margin-top:5px;
+      color:#fff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body style="background:url(bg.png)" >
+<div class="container">
+  <table></table>
+  <!-- 热点整体背景-->
+  <div id="redianbeijing">
+  <!-- 热点头部-->
+  <div id="rediantoubu">
+    <!-- 推荐歌单-->
+    <table></table>
+    <h2 class="tjgd"><b>推荐歌单</b></h2>
+    <!-- 推荐，影视，华语，欧美，日韩-->
+    <div id="rediantoubuzi">
+
+      <a href="" style="color:#e91e63;">推荐</a>
+      <a href="" style="color:#666">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;影视&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+      <a href="" style="color:#666">华语&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+      <a href="" style="color:#666">欧美&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+      <a href="" style="color:#666">日韩</a>
+    </div>
+    <!--更多-->
+    <div id="rediangengduo">
+      <a  href="" style="color:#666">更多></a>
+    </div>
+  </div>
+  <!-- 热点-->
+  <div id="redian">
+    <!-- 热点图片-->
+    <div id="rediantupian">
+      <!-- 图片1-->
+      <div id="rd1">
+        <!--图片1-->
+        <img class="rdtp" src="tjgd/rd1.jpg" alt=""/>
+        <!--字-->
+        <a id="rdz1" href="">热门影视音乐推荐</a>
+        <!--耳机 框-->
+        <div class="erjikuang">
+          <!--耳机图片-->
+          <img class="erji" src="tjgd/xiaoerji.png" alt=""/>
+          <!--播放量-->
+          <p class="redianbofangliang">3323.8W</p>
+        </div>
+      </div>
+      <!-- 图片2-->
+      <div id="rd2">
+        <img class="rdtp" src="tjgd/rd2.jpg" alt=""/>
+        <a id="rdz2" href="">冬日限定|怦然心动的韩系音律</a>
+        <div class="erjikuang">
+          <img class="erji" src="tjgd/xiaoerji.png" alt=""/>
+          <p class="redianbofangliang">128.7W</p>
+        </div>
+      </div>
+      <!-- 图片3-->
+      <div id="rd3">
+        <img class="rdtp" src="tjgd/rd3.jpg" alt=""/>
+        <a id="rdz3" href="">那些惊艳耳朵的神仙翻唱</a>
+        <div class="erjikuang">
+          <img class="erji" src="tjgd/xiaoerji.png" alt=""/>
+          <p class="redianbofangliang">3181.8W</p>
+        </div>
+      </div>
+      <!-- 图片4-->
+      <div id="rd4">
+        <img class="rdtp" src="tjgd/rd4.jpg" alt=""/>
+        <a id="rdz4" href="">古典|优雅舞者</a>
+        <div class="erjikuang">
+          <img class="erji" src="tjgd/xiaoerji.png" alt=""/>
+          <p class="redianbofangliang">500.8W</p>
+        </div>
+      </div>
+      <!-- 图片5-->
+      <div id="rd5">
+        <img class="rdtp" src="tjgd/rd5.jpg" alt=""/>
+        <a id="rdz5" href="">天气寒凉，抱紧这些歌取暖</a>
+        <div class="erjikuang">
+          <img class="erji" src="tjgd/xiaoerji.png" alt=""/>
+          <p class="redianbofangliang">4468.5W</p>
+        </div>
+      </div>
+      <!-- 图片6-->
+      <div id="rd6">
+        <img class="rdtp" src="tjgd/rd6.jpg" alt=""/>
+        <a id="rdz6" href="">请查收！您的圣诞邀请函</a>
+        <div class="erjikuang">
+          <img class="erji" src="tjgd/xiaoerji.png" alt=""/>
+          <p class="redianbofangliang">562.7W</p>
+        </div>
+      </div>
+      <!-- 图片7-->
+      <div id="rd7">
+        <img class="rdtp" src="tjgd/rd7.jpg" alt=""/>
+        <a id="rdz7" href="">于聆听中，万物复苏</a>
+        <div class="erjikuang">
+          <img class="erji" src="tjgd/xiaoerji.png" alt=""/>
+          <p class="redianbofangliang">5078.9W</p>
+        </div>
+      </div>
+      <!-- 图片8-->
+      <div id="rd8">
+        <img class="rdtp" src="tjgd/rd8.jpg" alt=""/>
+        <a id="rdz8" href="">欧美流行|暗夜起舞</a>
+        <div class="erjikuang">
+          <img class="erji" src="tjgd/xiaoerji.png" alt=""/>
+          <p class="redianbofangliang">8557.7W</p>
+        </div>
+      </div>
+      <!-- 图片9-->
+      <div id="rd9">
+        <img class="rdtp" src="tjgd/rd9.jpg" alt=""/>
+        <a id="rdz9" href="">在疲惫的生活里安然入梦乡</a>
+        <div class="erjikuang">
+          <img class="erji" src="tjgd/xiaoerji.png" alt=""/>
+          <p class="redianbofangliang">677.1W</p>
+        </div>
+      </div>
+      <!-- 图片10-->
+      <div id="rd10">
+        <img class="rdtp" src="tjgd/rd10.jpg" alt=""/>
+        <a id="rdz10" href="">给生活加点糖！甜系小曲来袭</a>
+        <div class="erjikuang">
+          <img class="erji" src="tjgd/xiaoerji.png" alt=""/>
+          <p class="redianbofangliang">4584.3W</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- 新歌速递页面-->
+  <div id="xingesudikuang">
+  <!-- 新歌速递头部-->
+    <div id="xingesuditoubu">
+      <h2 style="color:#fff;">新歌速递</h2>
+      <ul id="xgsd" class="breadcrumb bg-transparent">
+        <li class="breadcrumb-item"><a class="xingesuditoubuzi1" href="">华语</a></li>
+        <li class="breadcrumb-item"><a class="xingesuditoubuzi2" href="">欧美</a></li>
+        <li class="breadcrumb-item"><a class="xingesuditoubuzi2" href="">日韩</a></li>
+      </ul>
+      <div id="xingesudibofangquanbu"><a style="color:#fff;" href="">播放全部</a></div>
+    </div>
+    <!-- 轮播图-->
+    <div id="xgsdlbt" class="carousel" data-ride="carousel" >
+      <div class="carousel-inner">
+      <!-- 第一页-->
+      <div class="carousel-item active ">
+        <!-- 标签1-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/01.jpg" alt=""/>
+          <div class="media-body">
+            <h6>合拍(Sunlight)</h6>
+            <p>郭书瑶</p>
+          </div>
+          <p class="xgsdsj">03:12</p>
+        </div>
+        <!-- 标签2-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/02.jpg" alt=""/>
+          <div class="media-body">
+            <h6>默念你</h6>
+            <p>宋念宇</p>
+          </div>
+          <p class="xgsdsj">04:40</p>
+        </div>
+        <!-- 标签3-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/03.jpg" alt=""/>
+          <div class="media-body">
+            <h6>圣诞节的歌</h6>
+            <p>跟风超人 / 王德发</p>
+          </div>
+          <p class="xgsdsj">03:55</p>
+        </div>
+        <!-- 标签4-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/04.jpg" alt=""/>
+          <div class="media-body">
+            <h6>老友记</h6>
+            <p>李荣浩</p>
+          </div>
+          <p class="xgsdsj">04:46</p>
+        </div>
+        <!-- 标签5-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/05.jpg" alt=""/>
+          <div class="media-body">
+            <h6>宠爱(电影《宠爱》</h6>
+            <p>陈伟霆 / 吴磊 / 杨子姗</p>
+          </div>
+          <p class="xgsdsj">03:49</p>
+        </div>
+        <!-- 标签6-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/06.jpg" alt=""/>
+          <div class="media-body">
+            <h6>逍遥辞</h6>
+            <p>徐良</p>
+          </div>
+          <p class="xgsdsj">03:42</p>
+        </div>
+        <!-- 标签7-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/07.jpg" alt=""/>
+          <div class="media-body">
+            <h6>就听</h6>
+            <p>董又霖</p>
+          </div>
+          <p class="xgsdsj">03:37</p>
+        </div>
+        <!-- 标签8-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/08.jpg" alt=""/>
+          <div class="media-body">
+            <h6>董又霖</h6>
+            <p>戴景耀</p>
+          </div>
+          <p class="xgsdsj">03:36</p>
+        </div>
+        <!-- 标签9-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/09.jpg" alt=""/>
+          <div class="media-body">
+            <h6>天亮就走</h6>
+            <p>张赫宣</p>
+          </div>
+          <p class="xgsdsj">04:45</p>
+        </div>
+      </div>
+      <!-- 第二页-->
+      <div class="carousel-item ">
+        <!-- 标签1-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/10.jpg" alt=""/>
+          <div class="media-body">
+            <h6>像我们都是少年(动画《万国志》插曲)</h6>
+            <p>周品</p>
+          </div>
+          <p class="xgsdsj">04:31</p>
+        </div>
+        <!-- 标签2-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/11.jpg" alt=""/>
+          <div class="media-body">
+            <h6>暖暖的家</h6>
+            <p>歌浴森</p>
+          </div>
+          <p class="xgsdsj">05:40</p>
+        </div>
+        <!-- 标签3-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/12.jpg" alt=""/>
+          <div class="media-body">
+            <h6>配合</h6>
+            <p>薛之谦</p>
+          </div>
+          <p class="xgsdsj">03:14</p>
+        </div>
+        <!-- 标签4-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/13.jpg" alt=""/>
+          <div class="media-body">
+            <h6>梦中的图瓦卢</h6>
+            <p>阿兰</p>
+          </div>
+          <p class="xgsdsj">04:35</p>
+        </div>
+        <!-- 标签5-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/14.jpg" alt=""/>
+          <div class="media-body">
+            <h6>可是我爱你</h6>
+            <p>刘宪华</p>
+          </div>
+          <p class="xgsdsj">03:10</p>
+        </div>
+        <!-- 标签6-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/15.jpg" alt=""/>
+          <div class="media-body">
+            <h6>不忘</h6>
+            <p>范玮琪</p>
+          </div>
+          <p class="xgsdsj">03:42</p>
+        </div>
+        <!-- 标签7-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/16.jpg" alt=""/>
+          <div class="media-body">
+            <h6>梦她 (网剧《梦回》插曲)</h6>
+            <p>李鑫一</p>
+          </div>
+          <p class="xgsdsj">04:37</p>
+        </div>
+        <!-- 标签8-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/17.jpg" alt=""/>
+          <div class="media-body">
+            <h6>下凡</h6>
+            <p>凤凰传奇</p>
+          </div>
+          <p class="xgsdsj">04:46</p>
+        </div>
+        <!-- 标签9-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/18.jpg" alt=""/>
+          <div class="media-body">
+            <h6>穿花扑蝶曲</h6>
+            <p>双笙</p>
+          </div>
+          <p class="xgsdsj">06:45</p>
+        </div>
+      </div>
+      <!-- 第三页-->
+        <div class="carousel-item ">
+        <!-- 标签1-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/19.jpg" alt=""/>
+          <div class="media-body">
+            <h6>迷雾</h6>
+            <p>不才</p>
+          </div>
+          <p class="xgsdsj">04:12</p>
+        </div>
+        <!-- 标签2-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/20.jpg" alt=""/>
+          <div class="media-body">
+            <h6>我可以(电视剧《楼下女友请签收》插曲)</h6>
+            <p>王瑞淇</p>
+          </div>
+          <p class="xgsdsj">04:40</p>
+        </div>
+        <!-- 标签3-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/21.jpg" alt=""/>
+          <div class="media-body">
+            <h6>歌声与微笑</h6>
+            <p> AKB48 Team SH</p>
+          </div>
+          <p class="xgsdsj">03:55</p>
+        </div>
+        <!-- 标签4-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/22.jpg" alt=""/>
+          <div class="media-body">
+            <h6>归来</h6>
+            <p>平安</p>
+          </div>
+          <p class="xgsdsj">04:46</p>
+        </div>
+        <!-- 标签5-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/23.jpg" alt=""/>
+          <div class="media-body">
+            <h6>宠爱(电影《宠爱》</h6>
+            <p>陈伟霆 / 吴磊 / 杨子姗</p>
+          </div>
+          <p class="xgsdsj">03:49</p>
+        </div>
+        <!-- 标签6-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/24.jpg" alt=""/>
+          <div class="media-body">
+            <h6>昔日圣诞</h6>
+            <p>曾轶可</p>
+          </div>
+          <p class="xgsdsj">03:42</p>
+        </div>
+        <!-- 标签7-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/25.jpg" alt=""/>
+          <div class="media-body">
+            <h6>就听</h6>
+            <p>董又霖</p>
+          </div>
+          <p class="xgsdsj">03:37</p>
+        </div>
+        <!-- 标签8-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/26.jpg" alt=""/>
+          <div class="media-body">
+            <h6>董又霖</h6>
+            <p>戴景耀</p>
+          </div>
+          <p class="xgsdsj">03:36</p>
+        </div>
+        <!-- 标签9-->
+        <div class="jumbotron media border p-0">
+          <img class="mr-3" style="width:100px;" src="xgsdlunbotu/27.jpg" alt=""/>
+          <div class="media-body">
+            <h6>天亮就走</h6>
+            <p>张赫宣</p>
+          </div>
+          <p class="xgsdsj">04:45</p>
+        </div>
+      </div>
+      </div>
+      <!-- 左右箭头-->
+      <a data-slide="next" class="carousel-control-next" href="#xgsdlbt">
+        <span class="carousel-control-next-icon"></span>
+      </a>
+      <a data-slide="prev" class="carousel-control-prev" href="#xgsdlbt">
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <!-- 轮播指示器-->
+      <ul class="carousel-indicators">
+        <li data-target="#xgsdlbt" data-slide-to="0" class="active"></li>
+        <li data-target="#xgsdlbt" data-slide-to="1"></li>
+        <li data-target="#xgsdlbt" data-slide-to="2"></li>
+      </ul>
+    </div>
+  </div>
+  <!--排行榜框-->
+  <div class="paihangbangkuang">
+    <!-- 排行榜头部-->
+    <div class="paihangbangtoubu">
+      <div class="paihangbangzi">排行榜</div>
+      <a class="phbgd" href="">更多></a>
+    </div>
+    <!-- 音乐榜-->
+    <div class="yinyuebang">
+      <!-- 音乐排行榜头-->
+      <div class="phbt">
+        <img src="phb/yyb.png"/>
+      </div>
+      <div >
+        <table></table>
+        <!-- 排行榜播放器-->
+        <img class="phbbfq" src="phb/bfq.png" alt=""/>
+      </div>
+      <div class="kong"></div>
+      <!-- 第1名-->
+      <div class="paihangkuai">
+        <!-- 数字1-->
+        <div class="paihang1">1</div>
+        <!-- 排行歌手图片-->
+        <img class="pht" src="phb/01.jpg" alt=""/>
+        <!-- 排行歌名-->
+        <p class="phgm">老友记</p>
+        <!-- 排行歌手-->
+        <div class="phgs1">李荣浩</div>
+        <!-- 播放量耳机-->
+        <img class="phbej1" src="phb/phbej.png" alt=""/>
+        <!-- 排行榜播放量-->
+        <p class="phbbfl">11</p>
+      </div>
+      <!-- 第2名-->
+      <div class="paihangkuai">
+        <!-- 数字2-->
+        <div class="paihang1">2</div>
+        <!-- 排行歌手图片-->
+        <img class="pht" src="phb/02.jpg" alt=""/>
+        <!-- 排行歌名-->
+        <p class="phgm">末日长河</p>
+        <!-- 排行歌手-->
+        <div class="phgs2">易烊千玺</div>
+        <!-- 播放量耳机-->
+        <img class="phbej2" src="phb/phbej.png" alt=""/>
+        <!-- 排行榜播放量-->
+        <p class="phbbfl">152</p>
+      </div>
+      <!-- 第3名-->
+      <div class="paihangkuai">
+        <!-- 数字3-->
+        <div class="paihang1">3</div>
+        <!-- 排行歌手图片-->
+        <img class="pht" src="phb/03.jpg" alt=""/>
+        <!-- 排行歌名-->
+        <p class="phgm">再一，再二，再三</p>
+        <!-- 排行歌手-->
+        <div class="phgs3">易烊千玺</div>
+        <!-- 播放量耳机-->
+        <img class="phbej3" src="phb/phbej.png" alt=""/>
+        <!-- 排行榜播放量-->
+        <p class="phbbfl">136</p>
+      </div>
+      <!-- 第4名-->
+      <div class="paihangkuai">
+        <!-- 数字4-->
+        <div class="paihang1">4</div>
+        <!-- 排行歌手图片-->
+        <img class="pht" src="phb/04.jpg" alt=""/>
+        <!-- 排行歌名-->
+        <p class="phgm">配合</p>
+        <!-- 排行歌手-->
+        <div class="phgs4">薛之谦</div>
+        <!-- 播放量耳机-->
+        <img class="phbej4" src="phb/phbej.png" alt=""/>
+        <!-- 排行榜播放量-->
+        <p class="phbbfl">720</p>
+      </div>
+      <!-- 第5名-->
+      <div class="paihangkuai">
+        <!-- 数字5-->
+        <div class="paihang1">5</div>
+        <!-- 排行歌手图片-->
+        <img class="pht" src="phb/05.jpg" alt=""/>
+        <!-- 排行歌名-->
+        <p class="phgm">Gone</p>
+        <!-- 排行歌手-->
+        <div class="phgs5">易烊千玺</div>
+        <!-- 播放量耳机-->
+        <img class="phbej5" src="phb/phbej.png" alt=""/>
+        <!-- 排行榜播放量-->
+        <p class="phbbfl">102</p>
+      </div>
+    </div>
+    <!-- 欧美榜-->
+    <div class="oumeibang">
+      <div class="phbt">
+        <img src="phb/yyb.png"/>
+      </div>
+      <div >
+        <img class="phbbfq" src="phb/bfq.png" alt=""/>
+      </div>
+      <div class="kong"></div>
+      <!-- 第1名-->
+      <div class="paihangkuai">
+        <!-- 数字1-->
+        <div class="paihang1">1</div>
+        <!-- 排行歌手图片-->
+        <img class="pht" src="phb/06.jpg" alt=""/>
+        <!-- 排行歌名-->
+        <p class="phgm">老友记</p>
+        <!-- 排行歌手-->
+        <div class="phgs1">李荣浩</div>
+        <!-- 播放量耳机-->
+        <img class="phbej1" src="phb/phbej.png" alt=""/>
+        <!-- 排行榜播放量-->
+        <p class="phbbfl">11</p>
+      </div>
+      <!-- 第2名-->
+      <div class="paihangkuai">
+        <!-- 数字2-->
+        <div class="paihang1">2</div>
+        <!-- 排行歌手图片-->
+        <img class="pht" src="phb/07.jpg" alt=""/>
+        <!-- 排行歌名-->
+        <p class="phgm">末日长河</p>
+        <!-- 排行歌手-->
+        <div class="phgs2">易烊千玺</div>
+        <!-- 播放量耳机-->
+        <img class="phbej2" src="phb/phbej.png" alt=""/>
+        <!-- 排行榜播放量-->
+        <p class="phbbfl">152</p>
+      </div>
+      <!-- 第3名-->
+      <div class="paihangkuai">
+        <!-- 数字3-->
+        <div class="paihang1">3</div>
+        <!-- 排行歌手图片-->
+        <img class="pht" src="phb/08.jpg" alt=""/>
+        <!-- 排行歌名-->
+        <p class="phgm">再一，再二，再三</p>
+        <!-- 排行歌手-->
+        <div class="phgs3">易烊千玺</div>
+        <!-- 播放量耳机-->
+        <img class="phbej3" src="phb/phbej.png" alt=""/>
+        <!-- 排行榜播放量-->
+        <p class="phbbfl">136</p>
+      </div>
+      <!-- 第4名-->
+      <div class="paihangkuai">
+        <!-- 数字4-->
+        <div class="paihang1">4</div>
+        <!-- 排行歌手图片-->
+        <img class="pht" src="phb/09.jpg" alt=""/>
+        <!-- 排行歌名-->
+        <p class="phgm">配合</p>
+        <!-- 排行歌手-->
+        <div class="phgs4">薛之谦</div>
+        <!-- 播放量耳机-->
+        <img class="phbej4" src="phb/phbej.png" alt=""/>
+        <!-- 排行榜播放量-->
+        <p class="phbbfl">720</p>
+      </div>
+      <!-- 第5名-->
+      <div class="paihangkuai">
+        <!-- 数字5-->
+        <div class="paihang1">5</div>
+        <!-- 排行歌手图片-->
+        <img class="pht" src="phb/10.jpg" alt=""/>
+        <!-- 排行歌名-->
+        <p class="phgm">Gone</p>
+        <!-- 排行歌手-->
+        <div class="phgs5">易烊千玺</div>
+        <!-- 播放量耳机-->
+        <img class="phbej5" src="phb/phbej.png" alt=""/>
+        <!-- 排行榜播放量-->
+        <p class="phbbfl">102</p>
+      </div>
+    </div>
+    <!-- 影视榜-->
+    <div class="yingshibang">
+      <div class="phbt">
+        <img src="phb/ysb.png"/>
+      </div>
+      <div >
+        <img class="phbbfq" src="phb/bfq.png" alt=""/>
+      </div>
+      <div class="kong"></div>
+      <!-- 第1名-->
+      <div class="paihangkuai">
+        <!-- 数字1-->
+        <div class="paihang1">1</div>
+        <!-- 排行歌手图片-->
+        <img class="pht" src="phb/11.jpg" alt=""/>
+        <!-- 排行歌名-->
+        <p class="phgm">老友记</p>
+        <!-- 排行歌手-->
+        <div class="phgs1">李荣浩</div>
+        <!-- 播放量耳机-->
+        <img class="phbej1" src="phb/phbej.png" alt=""/>
+        <!-- 排行榜播放量-->
+        <p class="phbbfl">11</p>
+      </div>
+      <!-- 第2名-->
+      <div class="paihangkuai">
+        <!-- 数字2-->
+        <div class="paihang1">2</div>
+        <!-- 排行歌手图片-->
+        <img class="pht" src="phb/12.jpg" alt=""/>
+        <!-- 排行歌名-->
+        <p class="phgm">末日长河</p>
+        <!-- 排行歌手-->
+        <div class="phgs2">易烊千玺</div>
+        <!-- 播放量耳机-->
+        <img class="phbej2" src="phb/phbej.png" alt=""/>
+        <!-- 排行榜播放量-->
+        <p class="phbbfl">152</p>
+      </div>
+      <!-- 第3名-->
+      <div class="paihangkuai">
+        <!-- 数字3-->
+        <div class="paihang1">3</div>
+        <!-- 排行歌手图片-->
+        <img class="pht" src="phb/13.jpg" alt=""/>
+        <!-- 排行歌名-->
+        <p class="phgm">再一，再二，再三</p>
+        <!-- 排行歌手-->
+        <div class="phgs3">易烊千玺</div>
+        <!-- 播放量耳机-->
+        <img class="phbej3" src="phb/phbej.png" alt=""/>
+        <!-- 排行榜播放量-->
+        <p class="phbbfl">136</p>
+      </div>
+      <!-- 第4名-->
+      <div class="paihangkuai">
+        <!-- 数字4-->
+        <div class="paihang1">4</div>
+        <!-- 排行歌手图片-->
+        <img class="pht" src="phb/14.jpg" alt=""/>
+        <!-- 排行歌名-->
+        <p class="phgm">配合</p>
+        <!-- 排行歌手-->
+        <div class="phgs4">薛之谦</div>
+        <!-- 播放量耳机-->
+        <img class="phbej4" src="phb/phbej.png" alt=""/>
+        <!-- 排行榜播放量-->
+        <p class="phbbfl">720</p>
+      </div>
+      <!-- 第5名-->
+      <div class="paihangkuai">
+        <!-- 数字5-->
+        <div class="paihang1">5</div>
+        <!-- 排行歌手图片-->
+        <img class="pht" src="phb/15.jpg" alt=""/>
+        <!-- 排行歌名-->
+        <p class="phgm">Gone</p>
+        <!-- 排行歌手-->
+        <div class="phgs5">易烊千玺</div>
+        <!-- 播放量耳机-->
+        <img class="phbej5" src="phb/phbej.png" alt=""/>
+        <!-- 排行榜播放量-->
+        <p class="phbbfl">102</p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

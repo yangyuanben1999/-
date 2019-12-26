@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    /* 排行榜框*/
+    .paihangbangkuang{
+      width: 1250px;height: 700px;
+      /*border:1px solid #fff;*/
+      margin-left:80px;
+      margin-top:100px;
+    }
+    /*排行榜头部*/
+    .paihangbangtoubu{
+      width: 1250px;
+      height: 32px;
+      /*border:1px solid #fff;*/
+      margin-bottom: 40px;
+    }
+    /*音乐榜*/
+    .yinyuebang{
+      width: 387px;
+      height: 529px;
+      /*border:1px solid #fff;*/
+      float: left;
+      margin-right:20px;
+      background-image: url(phb/bg-01.png);
+    }
+    /*欧美榜*/
+    .oumeibang{
+      width: 387px;
+      height: 529px;
+      /*border:1px solid #fff;*/
+      float: left;
+      margin-right:20px;
+      background-image: url(phb/bg-02.png);
+    }
+    /*影视榜*/
+    .yingshibang{
+      width: 387px;
+      height: 529px;
+      /*border:1px solid #fff;*/
+      float: left;
+      margin-right:20px;
+      background-image: url(phb/bg-03.png);
+    }
+    /*音乐榜悬停效果*/
+    .yinyuebang:hover{
+      transform:scale(1.05);
+    }
+    .yinyuebang:hover{
+      transition: transform 1s;
+    }
+    /*欧美榜悬停效果*/
+    .oumeibang:hover{
+      transform:scale(1.05);
+    }
+    .oumeibang:hover{
+      transition: transform 1s;
+    }
+    /*影视榜悬停效果*/
+    .yingshibang:hover{
+      transform:scale(1.05);
+    }
+    .yingshibang:hover{
+      transition: transform 1s;
+    }
+    /*音乐榜头*/
+    .phbt{
+      width: 290px;
+      height: 75px;
+      padding: 20px 20px;
+      float:left;
+    }
+    /*排行榜播放器*/
+    .phbbfq{
+      width: 34px;
+      height: 34px;
+      margin-top:30px;
+    }
+    /*空模块*/
+    .kong{
+      width: 387px;
+      height: 30px;
+      rgba(0,0,0,0.25);
+    }
+    /*排行块*/
+    .paihangkuai{
+      width: 387px;
+      height: 75px;
+      float:left;
+    }
+    /*排名数字*/
+    .paihang1{
+      font-size:18px;
+      color:#fff;
+      margin-left:20px;
+      margin-right:20px;
+      margin-top:25px;
+      float:left;
+    }
+    /*排行歌手图片*/
+    .pht{
+      width: 55px;
+      height: 55px;
+      margin-top:10px;
+      float:left;
+    }
+    /*排行歌名*/
+    .phgm{
+      font-size:16px;
+      color:#fff;
+      margin-left:25px;
+      float:left;
+    }
+    /*排行歌手1*/
+    .phgs1,.phgs2,.phgs3,.phgs4,.phgs5{
+      font-size:14px;
+      color:rgba(225,225,225,.6);
+    }
+    /*排行歌手1*/
+    .phgs1{
+      margin-top:45px;
+      margin-left:-48px;
+      float:left;
+    }
+    /*排行歌手2*/
+    .phgs2{
+      margin-top:45px;
+      margin-left:-65px;
+      float:left;
+    }
+    /*排行歌手3*/
+    .phgs3{
+      margin-top:45px;
+      margin-left:-130px;
+      float:left;
+    }
+    /*排行歌手4*/
+    .phgs4{
+      margin-top:45px;
+      margin-left:-35px;
+      float:left;
+    }
+    /*排行歌手5*/
+    .phgs5{
+      margin-top:45px;
+      margin-left:-45px;
+      float:left;
+    }
+    /*播放量耳机大小*/
+    .phbej1,.phbej2,.phbej3,.phbej4,.phbej5{
+      width: 14px;
+      height: 14px;
+    }
+    /*播放耳机1*/
+    .phbej1{
+      margin-left:150px;
+      margin-top:35px;
+    }
+    /*播放耳机2*/
+    .phbej2{
+      margin-left:133px;
+      margin-top:35px;
+    }
+    /*播放耳机3*/
+    .phbej3{
+      margin-left:69px;
+      margin-top:35px;
+    }
+    /*播放耳机4*/
+    .phbej4{
+      margin-left:158px;
+      margin-top:35px;
+    }
+    /*播放耳机5*/
+    .phbej5{
+      margin-left:144px;
+      margin-top:35px;
+    }
+    /*排行榜播放量*/
+    .phbbfl{
+      color:#fff;
+      font-size:14px;
+      margin-left:350px;
+      margin-top:-21px;
+    }
+    /*排行歌手图片悬停效果*/
+    .pht:hover{
+      transform:scale(1.2);
+    }
+    .pht:hover{
+      transition: transform 1s;
+    }
+    /*排行榜字*/
+    .paihangbangtoubu .paihangbangzi{
+      width: 96px; height: 35px;
+      color:#fff;float:left;
+      margin-top:-5px;
+      font-size:32px;
+      font-weight: 800;
+    }
+    /*排行榜更多*/
+    .phbgd{
+      font-size:16px;
+      float:right;
+      margin-right:45px ;margin-top:5px;
+      color:#fff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body style="background:url(bg.png)">
+<!--排行榜框-->
+  <div class="paihangbangkuang">
+    <!-- 排行榜头部-->
+    <div class="paihangbangtoubu">
+      <div class="paihangbangzi">排行榜</div>
+      <a class="phbgd" href="">更多></a>
+    </div>
+    <!-- 音乐榜-->
+    <div class="yinyuebang">
+      <!-- 音乐排行榜头-->
+      <div class="phbt">
+        <img src="phb/yyb.png"/>
+      </div>
+      <div >
+        <img class="phbbfq" src="phb/bfq.png" alt=""/>
+      </div>
+      <div class="kong"></div>
+      <!-- 第1名-->
+      <div class="paihangkuai">
+        <!-- 数字1-->
+        <div class="paihang1">1</div>
+        <!-- 排行歌手图片-->
+        <img class="pht" src="phb/01.jpg" alt=""/>
+        <!-- 排行歌名-->
+        <p class="phgm">老友记</p>
+        <!-- 排行歌手-->
+        <div class="phgs1">李荣浩</div>
+        <!-- 播放量耳机-->
+        <img class="phbej1" src="phb/phbej.png" alt=""/>
+        <!-- 排行榜播放量-->
+        <p class="phbbfl">11</p>
+      </div>
+      <!-- 第2名-->
+      <div class="paihangkuai">
+        <!-- 数字2-->
+        <div class="paihang1">2</div>
+        <!-- 排行歌手图片-->
+        <img class="pht" src="phb/02.jpg" alt=""/>
+        <!-- 排行歌名-->
+        <p class="phgm">末日长河</p>
+        <!-- 排行歌手-->
+        <div class="phgs2">易烊千玺</div>
+        <!-- 播放量耳机-->
+        <img class="phbej2" src="phb/phbej.png" alt=""/>
+        <!-- 排行榜播放量-->
+        <p class="phbbfl">152</p>
+      </div>
+      <!-- 第3名-->
+      <div class="paihangkuai">
+        <!-- 数字3-->
+        <div class="paihang1">3</div>
+        <!-- 排行歌手图片-->
+        <img class="pht" src="phb/03.jpg" alt=""/>
+        <!-- 排行歌名-->
+        <p class="phgm">再一，再二，再三</p>
+        <!-- 排行歌手-->
+        <div class="phgs3">易烊千玺</div>
+        <!-- 播放量耳机-->
+        <img class="phbej3" src="phb/phbej.png" alt=""/>
+        <!-- 排行榜播放量-->
+        <p class="phbbfl">136</p>
+      </div>
+      <!-- 第4名-->
+      <div class="paihangkuai">
+        <!-- 数字4-->
+        <div class="paihang1">4</div>
+        <!-- 排行歌手图片-->
+        <img class="pht" src="phb/04.jpg" alt=""/>
+        <!-- 排行歌名-->
+        <p class="phgm">配合</p>
+        <!-- 排行歌手-->
+        <div class="phgs4">薛之谦</div>
+        <!-- 播放量耳机-->
+        <img class="phbej4" src="phb/phbej.png" alt=""/>
+        <!-- 排行榜播放量-->
+        <p class="phbbfl">720</p>
+      </div>
+      <!-- 第5名-->
+      <div class="paihangkuai">
+        <!-- 数字5-->
+        <div class="paihang1">5</div>
+        <!-- 排行歌手图片-->
+        <img class="pht" src="phb/05.jpg" alt=""/>
+        <!-- 排行歌名-->
+        <p class="phgm">Gone</p>
+        <!-- 排行歌手-->
+        <div class="phgs5">易烊千玺</div>
+        <!-- 播放量耳机-->
+        <img class="phbej5" src="phb/phbej.png" alt=""/>
+        <!-- 排行榜播放量-->
+        <p class="phbbfl">102</p>
+      </div>
+    </div>
+    <!-- 欧美榜-->
+    <div class="oumeibang">
+      <div class="phbt">
+        <img src="phb/yyb.png"/>
+      </div>
+      <div >
+        <img class="phbbfq" src="phb/bfq.png" alt=""/>
+      </div>
+      <div class="kong"></div>
+      <!-- 第1名-->
+      <div class="paihangkuai">
+        <!-- 数字1-->
+        <div class="paihang1">1</div>
+        <!-- 排行歌手图片-->
+        <img class="pht" src="phb/06.jpg" alt=""/>
+        <!-- 排行歌名-->
+        <p class="phgm">老友记</p>
+        <!-- 排行歌手-->
+        <div class="phgs1">李荣浩</div>
+        <!-- 播放量耳机-->
+        <img class="phbej1" src="phb/phbej.png" alt=""/>
+        <!-- 排行榜播放量-->
+        <p class="phbbfl">11</p>
+      </div>
+      <!-- 第2名-->
+      <div class="paihangkuai">
+        <!-- 数字2-->
+        <div class="paihang1">2</div>
+        <!-- 排行歌手图片-->
+        <img class="pht" src="phb/07.jpg" alt=""/>
+        <!-- 排行歌名-->
+        <p class="phgm">末日长河</p>
+        <!-- 排行歌手-->
+        <div class="phgs2">易烊千玺</div>
+        <!-- 播放量耳机-->
+        <img class="phbej2" src="phb/phbej.png" alt=""/>
+        <!-- 排行榜播放量-->
+        <p class="phbbfl">152</p>
+      </div>
+      <!-- 第3名-->
+      <div class="paihangkuai">
+        <!-- 数字3-->
+        <div class="paihang1">3</div>
+        <!-- 排行歌手图片-->
+        <img class="pht" src="phb/08.jpg" alt=""/>
+        <!-- 排行歌名-->
+        <p class="phgm">再一，再二，再三</p>
+        <!-- 排行歌手-->
+        <div class="phgs3">易烊千玺</div>
+        <!-- 播放量耳机-->
+        <img class="phbej3" src="phb/phbej.png" alt=""/>
+        <!-- 排行榜播放量-->
+        <p class="phbbfl">136</p>
+      </div>
+      <!-- 第4名-->
+      <div class="paihangkuai">
+        <!-- 数字4-->
+        <div class="paihang1">4</div>
+        <!-- 排行歌手图片-->
+        <img class="pht" src="phb/09.jpg" alt=""/>
+        <!-- 排行歌名-->
+        <p class="phgm">配合</p>
+        <!-- 排行歌手-->
+        <div class="phgs4">薛之谦</div>
+        <!-- 播放量耳机-->
+        <img class="phbej4" src="phb/phbej.png" alt=""/>
+        <!-- 排行榜播放量-->
+        <p class="phbbfl">720</p>
+      </div>
+      <!-- 第5名-->
+      <div class="paihangkuai">
+        <!-- 数字5-->
+        <div class="paihang1">5</div>
+        <!-- 排行歌手图片-->
+        <img class="pht" src="phb/10.jpg" alt=""/>
+        <!-- 排行歌名-->
+        <p class="phgm">Gone</p>
+        <!-- 排行歌手-->
+        <div class="phgs5">易烊千玺</div>
+        <!-- 播放量耳机-->
+        <img class="phbej5" src="phb/phbej.png" alt=""/>
+        <!-- 排行榜播放量-->
+        <p class="phbbfl">102</p>
+      </div>
+    </div>
+    <!-- 影视榜-->
+    <div class="yingshibang">
+      <div class="phbt">
+        <img src="phb/ysb.png"/>
+      </div>
+      <div >
+        <img class="phbbfq" src="phb/bfq.png" alt=""/>
+      </div>
+      <!-- 第1名-->
+      <div class="paihangkuai">
+        <!-- 数字1-->
+        <div class="paihang1">1</div>
+        <!-- 排行歌手图片-->
+        <img class="pht" src="phb/11.jpg" alt=""/>
+        <!-- 排行歌名-->
+        <p class="phgm">老友记</p>
+        <!-- 排行歌手-->
+        <div class="phgs1">李荣浩</div>
+        <!-- 播放量耳机-->
+        <img class="phbej1" src="phb/phbej.png" alt=""/>
+        <!-- 排行榜播放量-->
+        <p class="phbbfl">11</p>
+      </div>
+      <!-- 第2名-->
+      <div class="paihangkuai">
+        <!-- 数字2-->
+        <div class="paihang1">2</div>
+        <!-- 排行歌手图片-->
+        <img class="pht" src="phb/12.jpg" alt=""/>
+        <!-- 排行歌名-->
+        <p class="phgm">末日长河</p>
+        <!-- 排行歌手-->
+        <div class="phgs2">易烊千玺</div>
+        <!-- 播放量耳机-->
+        <img class="phbej2" src="phb/phbej.png" alt=""/>
+        <!-- 排行榜播放量-->
+        <p class="phbbfl">152</p>
+      </div>
+      <!-- 第3名-->
+      <div class="paihangkuai">
+        <!-- 数字3-->
+        <div class="paihang1">3</div>
+        <!-- 排行歌手图片-->
+        <img class="pht" src="phb/13.jpg" alt=""/>
+        <!-- 排行歌名-->
+        <p class="phgm">再一，再二，再三</p>
+        <!-- 排行歌手-->
+        <div class="phgs3">易烊千玺</div>
+        <!-- 播放量耳机-->
+        <img class="phbej3" src="phb/phbej.png" alt=""/>
+        <!-- 排行榜播放量-->
+        <p class="phbbfl">136</p>
+      </div>
+      <!-- 第4名-->
+      <div class="paihangkuai">
+        <!-- 数字4-->
+        <div class="paihang1">4</div>
+        <!-- 排行歌手图片-->
+        <img class="pht" src="phb/14.jpg" alt=""/>
+        <!-- 排行歌名-->
+        <p class="phgm">配合</p>
+        <!-- 排行歌手-->
+        <div class="phgs4">薛之谦</div>
+        <!-- 播放量耳机-->
+        <img class="phbej4" src="phb/phbej.png" alt=""/>
+        <!-- 排行榜播放量-->
+        <p class="phbbfl">720</p>
+      </div>
+      <!-- 第5名-->
+      <div class="paihangkuai">
+        <!-- 数字5-->
+        <div class="paihang1">5</div>
+        <!-- 排行歌手图片-->
+        <img class="pht" src="phb/15.jpg" alt=""/>
+        <!-- 排行歌名-->
+        <p class="phgm">Gone</p>
+        <!-- 排行歌手-->
+        <div class="phgs5">易烊千玺</div>
+        <!-- 播放量耳机-->
+        <img class="phbej5" src="phb/phbej.png" alt=""/>
+        <!-- 排行榜播放量-->
+        <p class="phbbfl">102</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
